@@ -7,13 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>beiSnaX</title>
 </head>
+<script src="jquery-3.5.1.min.js"></script>
 
 <body>
-    <img class="bg" src="beisna.jpeg" alt="beiSnaX">
+    <!-- <img class="bg" src="beisnax.png" alt="beiSnaX"> -->
+
+
+
+    <!-- IMAGEN -->
+
+    <div class="container-sm">
+        <div class="row justify-content-center">
+            <div class="col col-md-10">
+                <div class="gallery-container" id="animated-thumbnails-gallery">
+                    <img alt="layers of blue." class="img-responsive" src="beisnax.png" />
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGEN -->
 </body>
 
 <style>
+    body {
+        padding: 40px;
+        background-image: linear-gradient(#000000 0%, rgb(83, 83, 83) 52.08%);
+        color: #610000;
+        min-height: 100vh;
+    }
 
+    .header .lead {
+        max-width: 620px;
+    }
+
+    /** Below CSS is completely optional **/
+
+    .gallery-item {
+        width: 200px;
+        padding: 5px;
+    }
 </style>
+<script>
+    jQuery("#animated-thumbnails-gallery")
+        .justifiedGallery({
+            captions: false,
+            lastRow: "hide",
+            rowHeight: 180,
+            margins: 5
+        })
+        .on("jg.complete", function () {
+            window.lightGallery(
+                document.getElementById("animated-thumbnails-gallery"),
+                {
+                    autoplayFirstVideo: false,
+                    pager: false,
+                    galleryId: "nature",
+                    plugins: [lgZoom, lgThumbnail],
+                    mobileSettings: {
+                        controls: false,
+                        showCloseIcon: false,
+                        download: false,
+                        rotate: false
+                    }
+                }
+            );
+        });
+
+</script>
 
 </html>
